@@ -61,7 +61,7 @@ const links = [
     },
 ]
 
-var olist = document.getElementById("list");
+var ollist = document.getElementById("list");
 
 for (let i=0; i < links.length; i++){
     let a = document.createElement("a");
@@ -69,5 +69,5 @@ for (let i=0; i < links.length; i++){
     a.textContent = links[i].label;
     a.setAttribute('href', links[i].url);
     li.appendChild(a);
-    olist.appendChild(li); 
+    ollist.appendChild(li); 
 }
