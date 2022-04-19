@@ -1,9 +1,15 @@
 body {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    color: aquamarine;
   }
   
   h1 {
-    background-color: antiquewhite;
+    background-color: rgb(169, 238, 197);
+    padding: 1em;
+  }
+
+  h2 {
+    background-color: rgb(105, 148, 122);
     padding: 1em;
   }
