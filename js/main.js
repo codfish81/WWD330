@@ -72,6 +72,3 @@ for (let i=0; i < links.length; i++){
     ollist.appendChild(li); 
 }
 
-const question = "What is Superman's real name?"
-const answer = prompt(question);
-alert('You answered ${answer}');
