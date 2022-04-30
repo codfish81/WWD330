@@ -1,0 +1,80 @@
+<!-- Write a new function that expects a number as an argument. It should take that number and 
+    sum all the numbers up to the number provided. (ie n=5…so it would do 1+2+3+4+5 = 15) It should return that value.
+ When the button is pressed it should read the number from the input. Make sure it is a valid number, 
+ call the summing function you just wrote, and output the result to the div.-->
+<!doctype html>
+<html>
+<head>
+  <title>Team Activity</title>
+  <script>
+    function addText() {
+        document.getElementById('outputContents').innerHTML += document.getElementById('inputText').value;
+    }
+
+    function addNum() {
+        let sumNum = document.getElementById('inputNumber').value;
+        let sum = 0;
+        for(let i = 0; i <= sumNum; i++) {
+            sum += i;
+        }
+        document.getElementById('outputSum').innerHTML = sum;
+    }
+
+    function addNum2() {
+        let numOne = document.getElementById('inputNumber2').value;
+        let numTwo = document.getElementById('inputNumber').value;
+        let num1 = parseFloat(numOne);
+        let num2 = parseFloat(numTwo);
+        if(num1 !== NaN && num2 !== NaN) {
+            let sumNum2 = num1 + num2;
+            document.getElementById('outputSum2').innerHTML = sumNum2;
+        }
+    }
+
+    function subNum() {
+        let numOne = document.getElementById('inputNumber').value;
+        let numTwo = document.getElementById('inputNumber2').value;
+        let num1 = parseFloat(numOne);
+        let num2 = parseFloat(numTwo);
+        if(num1 !== NaN && num2 !== NaN) {
+            let subNum2 = num1 - num2;
+            document.getElementById('outputSub').innerHTML = subNum2;
+        }
+    }
+
+    function multiNum() {
+        let numOne = document.getElementById('inputNumber2').value;
+        let numTwo = document.getElementById('inputNumber').value;
+        let num1 = parseFloat(numOne);
+        let num2 = parseFloat(numTwo);
+        if(num1 !== NaN && num2 !== NaN) {
+            let multiNum2 = num1 * num2;
+            document.getElementById('outputMulti').innerHTML = multiNum2;
+        }
+    }    
+  </script>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+	<input type="text" id="inputText">
+    <button type="button" onclick="addText()">Enter</button>
+    <div id="outputContents"></div>
+
+    <input type="number" id="inputNumber">
+    <button type="button" onclick="addNum()">Enter</button>
+    <div id="outputSum"></div>
+
+    <input type="number" id="inputNumber2">
+    <button type="button" onclick="addNum2()">+</button>
+    <div id="outputSum2"></div>
+    <button type="button" onclick="subNum()">-</button>
+    <div id="outputSub"></div>
+    <button type="button" onclick="multiNum()">*</button>
+    <div id="outputMulti"></div>
+    
+</body>
+</html>
