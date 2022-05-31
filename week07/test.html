@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <title>Title of Your Page</title>
+  <script>
+    (function(){
+        const temp = 'World';
+        console.log(`Hello ${temp}`);
+    })();
+
+    (function() {
+    // block A
+    const name = 'Block A';
+    console.log(`Hello from ${name}`);
+    }());
+
+    (function() {
+    // block B
+    const name = 'Block B';
+    console.log(`Hello from ${name}`);
+}());
+
+function party(){
+    console.log('Wow this is amazing!');
+    party = function(){
+        console.log('Been there, got the T-Shirt');
+    }
+}
+function wait(message, callback, seconds){
+    setTimeout(callback,seconds * 100);
+    console.log(message);
+}
+
+function selfDestruct(){
+    console.log('BOOOOM!');
+}
+
+const dice = {
+    sides: 6,
+    roll() {
+        return Math.floor(this.sides * Math.random()) + 1;
+    }
+}
+
+function roll(){
+const promise = new Promise( (resolve,reject) => {
+    const n = dice.roll();
+    setTimeout(() => {
+        (n > 1) ? resolve(n) : reject(n);
+    }, n*200);
+    //console.log(n);
+});
+//promise.then( result => console.log(`Yes! I rolled a ${result}`), result => console.log(`Drat! ... I rolled a ${result}`) );
+promise.then( result => console.log(`I rolled a ${result}`) )
+            .catch( result => console.log(`Drat! ... I rolled a ${result}`) );
+}
+
+function greeter(greeting = 'Hello') {
+    return function() {
+        console.log(greeting);
+    }
+}
+
+const englishGreeter = greeter();
+englishGreeter();
+
+const frenchGreeter = greeter('Bonjour');
+frenchGreeter();
+
+
+const germanGreeter = greeter('Guten Tag');
+germanGreeter();
+
+function closure() {
+    const a = 1.8;
+    const b = 32;
+    return c => c * a + b;
+}
+const toFahrenheit = closure();
+console.log(toFahrenheit(30));
+
+function counter(start){
+    let i = start;
+    return function() {
+        return i++;
+    }
+}
+const count = counter(1);
+console.log(count());
+console.log(count());
+
+function reverse(string) {
+    return string.split('').reverse().join('');
+}
+const message = 'Hello JavaScript';
+console.log(reverse(message));
+console.log(message);
+
+const number = 42;
+
+function pureAdd(x,y) {
+    return x + y;
+}
+
+result = pureAdd(number,10);
+console.log(result);
+  </script>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+	<p onclick="party()">Party</p>
+    <p onclick="wait('This tape will self-destruct in five seconds ... ', selfDestruct, 5);
+    console.log('Hmmm, should I accept this mission or not ... ?');">Wait</p>
+    <p onclick="roll()">Roll</p>
+    
+</body>
+</html>
